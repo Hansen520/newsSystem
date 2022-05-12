@@ -66,7 +66,6 @@ function SideMenu(props) {
       setMenu(res.data)
     })
   }, [])
-  // const selectKeys = [props.location.pathname]
   
   const handleMenu = (menu) => {
     menu.forEach((item) => {
@@ -81,8 +80,9 @@ function SideMenu(props) {
     })
   }
   handleMenu(menu)
-  
-
+  const newMenus = menu.filter((item) => item.pagepermisson === 1)
+  const selectKeys = [props.location.pathname]
+  const openKeys = ["/"+props.location.pathname.split("/")[1]]
   return (
       <Sider trigger={null} collapsible collapsed={false} >
       <div style={{display:"flex",height:"100%","flexDirection":"column"}}>
@@ -91,10 +91,12 @@ function SideMenu(props) {
           <Menu
             theme="dark"
             mode="inline"
+            selectedKeys={selectKeys}
             defaultSelectedKeys={['1']}
             items={
-              menu
+              newMenus
             }
+            defaultOpenKeys={openKeys}
             onClick={(e) => props.history.push(e.key)}
           >
           </Menu>
