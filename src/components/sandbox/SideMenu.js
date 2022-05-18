@@ -67,12 +67,18 @@ function SideMenu(props) {
     })
   }, [])
   
+
+  const { role: { rights } } = JSON.parse(localStorage.getItem('token'))
+  const checkPagePermission = (item)=>{
+    return item.pagepermisson && rights.includes(item.key)
+  }
+
   const handleMenu = (menu) => {
     menu.forEach((item) => {
       item.label = item.title
       item.icon = iconList[item.key]
       delete item.rightId
-      if(item.children && item.children.length > 0) {
+      if(item.children && item.children.length > 0 && checkPagePermission(item)) {
         handleMenu(item.children)
       } else {
         item.children = ''
@@ -80,7 +86,6 @@ function SideMenu(props) {
     })
   }
   handleMenu(menu)
-  const newMenus = menu.filter((item) => item.pagepermisson === 1)
   const selectKeys = [props.location.pathname]
   const openKeys = ["/"+props.location.pathname.split("/")[1]]
   return (
@@ -94,7 +99,7 @@ function SideMenu(props) {
             selectedKeys={selectKeys}
             defaultSelectedKeys={['1']}
             items={
-              newMenus
+              menu
             }
             defaultOpenKeys={openKeys}
             onClick={(e) => props.history.push(e.key)}

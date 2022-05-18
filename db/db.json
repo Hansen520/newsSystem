@@ -25,46 +25,25 @@
       "id": 14,
       "title": "新闻管理",
       "key": "/news-manage",
-      "pagepermisson": 0,
+      "pagepermisson": 1,
       "grade": 1
     },
     {
       "id": 21,
       "title": "审核管理",
       "key": "/audi-manage",
-      "pagepermisson": 0,
+      "pagepermisson": 1,
       "grade": 1
     },
     {
       "id": 24,
       "title": "发布管理",
       "key": "/publise-manage",
-      "pagepermisson": 0,
+      "pagepermisson": 1,
       "grade": 1
     }
   ],
   "children": [
-    {
-      "id": 3,
-      "title": "添加用户",
-      "rightId": 2,
-      "key": "/user-manage/add",
-      "grade": 2
-    },
-    {
-      "id": 4,
-      "title": "删除用户",
-      "rightId": 2,
-      "key": "/user-manage/delete",
-      "grade": 2
-    },
-    {
-      "id": 5,
-      "title": "修改用户",
-      "rightId": 2,
-      "key": "/user-manage/update",
-      "grade": 2
-    },
     {
       "id": 6,
       "title": "用户列表",
@@ -87,34 +66,6 @@
       "rightId": 7,
       "key": "/right-manage/right/list",
       "pagepermisson": 1,
-      "grade": 2
-    },
-    {
-      "id": 10,
-      "title": "修改角色",
-      "rightId": 7,
-      "key": "/right-manage/role/update",
-      "grade": 2
-    },
-    {
-      "id": 11,
-      "title": "删除角色",
-      "rightId": 7,
-      "key": "/right-manage/role/delete",
-      "grade": 2
-    },
-    {
-      "id": 12,
-      "title": "修改权限",
-      "rightId": 7,
-      "key": "/right-manage/right/update",
-      "grade": 2
-    },
-    {
-      "id": 13,
-      "title": "删除权限",
-      "rightId": 7,
-      "key": "/right-manage/right/delete",
       "grade": 2
     },
     {
@@ -304,49 +255,76 @@
       "roleId": 1
     },
     {
+      "username": "111",
+      "password": "1111",
+      "region": "",
+      "roleId": 1,
       "roleState": true,
-      "default": true,
-      "username": "区域管理员",
-      "password": "123456",
-      "region": "亚洲",
-      "roleId": 2,
-      "id": 2
+      "default": false,
+      "id": 7
     },
     {
-      "roleState": true,
-      "default": true,
-      "username": "区域编辑",
-      "password": "123456",
-      "region": "亚洲",
+      "username": "三生石下11111",
+      "password": "三生石下",
+      "region": "非洲",
       "roleId": 3,
-      "id": 3
+      "roleState": true,
+      "default": false,
+      "id": 8
     },
     {
-      "roleState": true,
-      "default": true,
-      "username": "编辑-例",
-      "password": "123",
-      "region": "亚洲",
-      "roleId": 3,
-      "id": 4
-    },
-    {
-      "roleState": true,
-      "default": true,
-      "username": "区域管理员-好",
-      "password": "123",
-      "region": "欧洲",
+      "username": "我做东",
+      "password": "三生石下1",
+      "region": "非洲",
       "roleId": 2,
-      "id": 5
+      "roleState": true,
+      "default": false,
+      "id": 9
     },
     {
+      "username": "1121212",
+      "password": "212121",
+      "region": "北美洲",
+      "roleId": 2,
       "roleState": true,
-      "default": true,
-      "username": "编辑-我",
-      "password": "123",
+      "default": false,
+      "id": 10
+    },
+    {
+      "username": "1121212",
+      "password": "111111",
       "region": "欧洲",
       "roleId": 3,
-      "id": 6
+      "roleState": true,
+      "default": false,
+      "id": 11
+    },
+    {
+      "username": "admin2",
+      "password": "123456",
+      "region": "南美洲",
+      "roleId": 2,
+      "roleState": true,
+      "default": false,
+      "id": 12
+    },
+    {
+      "username": "admin3",
+      "password": "123456",
+      "region": "南美洲",
+      "roleId": 3,
+      "roleState": true,
+      "default": false,
+      "id": 13
+    },
+    {
+      "username": "三生石下",
+      "password": "111",
+      "region": "北美洲",
+      "roleId": 3,
+      "roleState": true,
+      "default": false,
+      "id": 14
     }
   ],
   "regions": [

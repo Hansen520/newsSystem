@@ -5,26 +5,36 @@ import {
     MenuFoldOutlined,
     UserOutlined
 } from '@ant-design/icons'
+import { withRouter } from 'react-router-dom'
 
 const { Header } = Layout
-export default function TopHeader() {
+function TopHeader(props) {
     const [collapsed, setCollapsed] = useState(false)
     const changeCollapsed = () => {
         console.log(false)
         setCollapsed(!collapsed)
     }
+    const handleClick = (e) => {
+        console.log(e, 17)
+        if(e.key === 'tmp-1') {
+            localStorage.removeItem("token")
+            // console.log(props.history)
+            props.history.replace("/login")
+        }
+    }
     const menu = (
         <Menu
             items={
-            [
-                {   
-                    label: '超级管理员'
-                },
-                {   danger: true,
-                    label: '退出'
-                },
-            ]
-        }
+                [
+                    {   
+                        label: '超级管理员'
+                    },
+                    {   danger: true,
+                        label: '退出'
+                    },
+                ]
+            }
+            onClick={(e) => handleClick(e)}
         >
         </Menu>
     )
@@ -44,3 +54,4 @@ export default function TopHeader() {
         </Header>
     )
 }
+export default withRouter(TopHeader)
